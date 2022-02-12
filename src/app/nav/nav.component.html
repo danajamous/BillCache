@@ -6,7 +6,9 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Pay new bill</a>
-      <a mat-list-item href="./savedBills">Saved Bills</a>
+     <!--<a mat-list-item href="/savedBills">Saved Bills</a> --> 
+     <a mat-list-item  [routerLink]="'/savedBills'" >Saved Bills</a>
+     
       <a mat-list-item href="#">Saved Payment Methods</a>
     </mat-nav-list>
   </mat-sidenav>
