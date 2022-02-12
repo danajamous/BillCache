@@ -4,7 +4,6 @@ import { SavedBillsComponent } from './saved-bills/saved-bills.component';
 
 const routes: Routes = [
   {path:'savedBills',component:SavedBillsComponent},
-  //{path:'test',component:TestComponent}
 ];
 
 @NgModule({
