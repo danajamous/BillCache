@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-saved-bills',
   templateUrl: './saved-bills.component.html',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class SavedBillsComponent {
-  id2: string = "";
+  amountTopayInputId: string = "";
+  checkBoxInputId: string = "";
   data: Array<any>;
+  totalAmountToPay:number=0;
   displayedColumns: string[] = ['id', 'billerName', 'serviceName', 'billingNumber', 'amountToPay', 'inquire'];
   constructor() {
     this.data = [{ id: 1, billerName: 'T-Mobile', serviceName: "Prepaid", billingNumber: "202345555", amountToPay: 5.50 },
@@ -26,8 +29,20 @@ export class SavedBillsComponent {
     }
   }
   inquire(element: any) {
-    this.id2 = "amountToPayInput" + element.id;
-    (<HTMLInputElement>document.getElementById(this.id2)).value = element.amountToPay;
+    this.amountTopayInputId = "amountToPayInput" + element.id;
+    this.checkBoxInputId = "checkBox"+element.id;
+    (<HTMLInputElement>document.getElementById(this.amountTopayInputId)).value = element.amountToPay;
+    (<HTMLInputElement>document.getElementById(this.checkBoxInputId)).removeAttribute('disabled');
+  }
+
+  changeStatus(element:any){ 
+   this.totalAmountToPay+=element.amountToPay; 
+   console.log(this.checkBoxInputId);
+  }
+
+  payButtonClick(){
+    if(confirm("redirect to payment method page ")) {
+    }
   }
 }
 
