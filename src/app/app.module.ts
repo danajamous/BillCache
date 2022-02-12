@@ -31,7 +31,7 @@ import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@a
     MatIconModule,
     MatListModule
   ],
-  providers: [{provide: LocationStrategy,useClass:PathLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
