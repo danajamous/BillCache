@@ -1,0 +1,29 @@
+<div class="grid-container">
+    <h1 class="mat-h1">Saved Bills</h1>
+  
+    <table  class="mat-elevation-z8 table table-striped">
+      <tr>
+        <th>  </th>
+        <th> hBiller Name</th>
+        <th> Service Name</th>
+        <th> Billing Number</th>
+        <th> Amount To Pay</th>
+        <th> Actions</th>
+      </tr>
+        <tr *ngFor="let d of data " [attr.id]="d.id"> 
+            <td>{{ d.id}}</td>
+            <td>{{ d.billerName }}</td>
+            <td>{{ d.serviceName}}</td>
+            <td>{{ d.billingNumber }}</td>
+            <td> <input id="{{'amountToPayInput' + d.id}}" matInput >  {{ d.amountToPay}}</td>
+            <td>
+              <button mat-button (click)="inquire(d)">Inquire</button>
+              <button mat-icon-button (click)="deleteRow(d.id)" id="remove">
+                <mat-icon mat-button style="color:gray">delete</mat-icon>
+              </button>
+            </td> 
+        </tr>
+    </table> 
+  </div>
+  
+  
