@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatListModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
