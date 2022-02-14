@@ -12,13 +12,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaynewbillComponent } from './paynewbill/paynewbill.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import { PaymenthistoryComponent } from './paymenthistory/paymenthistory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SavedBillsComponent,
     NavComponent,
+    PaynewbillComponent,
+    PaymenthistoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +39,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatListModule,
     FormsModule,
+    MatSelectModule,
+    MatInputModule,
+    MatTableModule,
+    MatFormFieldModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent],
