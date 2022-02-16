@@ -1,0 +1,14 @@
+<div class="grid-container">
+    <h1 class="mat-h1"> Bill Summary</h1>
+    <table class="table table-hover">
+        <tr>
+            <th><a style="color:green"> Your bill summary</a></th>
+        </tr>
+        <tr *ngFor="let d of childPosts ">
+            <td>{{d}}</td>
+        </tr>
+    </table>
+
+    <label style ="font-weight: bold;">Total amount to pay</label> 30.8$
+    <div style="margin-top:20px"><button type="button" class="btn btn-success">Pay</button></div>
+</div>

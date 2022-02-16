@@ -19,6 +19,7 @@ import { PaynewbillComponent } from './paynewbill/paynewbill.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { PaymenthistoryComponent } from './paymenthistory/paymenthistory.component';
+import { BillSummaryComponent } from './bill-summary/bill-summary.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PaymenthistoryComponent } from './paymenthistory/paymenthistory.compone
     NavComponent,
     PaynewbillComponent,
     PaymenthistoryComponent,
+    BillSummaryComponent,
   ],
   imports: [
     BrowserModule,

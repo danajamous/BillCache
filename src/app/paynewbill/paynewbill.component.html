@@ -8,13 +8,13 @@
           <td>
             <mat-form-field appearance="fill">
                 <mat-label>Biller Category</mat-label>
-                <mat-select >
+                <mat-select (selectionChange)="addPost('Category:&nbsp; &nbsp; '+$event.value)" >
                   <mat-option>None</mat-option>
-                  <mat-option value="option1">Telecommunication</mat-option>
-                  <mat-option value="option2">Electricity</mat-option>
-                  <mat-option value="option3">Education</mat-option>
-                  <mat-option value="option4">Government Services</mat-option>
-                  <mat-option value="option5">Charity</mat-option>
+                  <mat-option value="Telecommunication">Telecommunication</mat-option>
+                  <mat-option value="Electricity">Electricity</mat-option>
+                  <mat-option value="Education">Education</mat-option>
+                  <mat-option value="Government Services">Government Services</mat-option>
+                  <mat-option value="Charity">Charity</mat-option>
                 </mat-select>
               </mat-form-field>
           </td>
@@ -22,22 +22,22 @@
           <td>
             <mat-form-field appearance="fill">
                 <mat-label>Biller Name</mat-label>
-                <mat-select >
+                <mat-select (selectionChange)="addPost('Biller: &nbsp; &nbsp; '+$event.value)" id ="biller" >
                   <mat-option>None</mat-option>
-                  <mat-option value="option1">T-Mobile</mat-option>
-                  <mat-option value="option2">Netflix</mat-option>
-                  <mat-option value="option3">George Mason University</mat-option>
+                  <mat-option value="T-Mobile">T-Mobile</mat-option>
+                  <mat-option value="Netflix">Netflix</mat-option>
+                  <mat-option value="George Mason University">George Mason University</mat-option>
                 </mat-select>
               </mat-form-field>
           </td>
           <td>
             <mat-form-field appearance="fill">
                 <mat-label>Service Name</mat-label>
-                <mat-select >
+                <mat-select  (selectionChange)="addPost('Service:&nbsp; &nbsp; ' +$event.value)" id="service" >
                   <mat-option>None</mat-option>
-                  <mat-option value="option1">Prepaid</mat-option>
-                  <mat-option value="option2">Balance</mat-option>
-                  <mat-option value="option3">Energy Bill</mat-option>
+                  <mat-option value="Prepaid">Prepaid</mat-option>
+                  <mat-option value="Balance">Balance</mat-option>
+                  <mat-option value="Energy Bill">Energy Bill</mat-option>
                 </mat-select>
            
             </mat-form-field>
@@ -45,7 +45,8 @@
           <td>
             <mat-form-field  appearance="fill">
                 <mat-label>Billing Number</mat-label>
-                <input matInput>
+               <input name="post" [(ngModel)]="billingNumber" #billingInput id="billingInput" matInput>
+                <input id="billingInput" matInput>
               </mat-form-field>
           </td>
       </tr>
@@ -53,7 +54,7 @@
     </table>
 
     <div  style="margin-top:20px;">
-        <button type="button" class="btn btn-success" style="position: absolute;
+        <button (click)="add('Billing number: &nbsp;&nbsp;'+ billingInput.value)"  [routerLink]="'/billSummary'" type="button" class="btn btn-success" style="position: absolute;
         right: 70px;">Inquire</button>
     </div>
     </div>
